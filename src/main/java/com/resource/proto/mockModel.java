@@ -33,7 +33,7 @@ public class mockModel {
         grades.add(tempGrade);
         tempGrade = new Grade();
         //
-        Student student = new Student(105, "Patryk", "Kuśmierkiewicz", new Date("1995/2/15"), grades);
+        Student student = new Student(105, "Alexy", "Petrow", new Date("1995/2/15"), grades);
         students.add(student);
         grades =  new ArrayList<>();
         /////////// student 2

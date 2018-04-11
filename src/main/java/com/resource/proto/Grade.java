@@ -3,26 +3,26 @@ package com.resource.proto;
 import java.util.Date;
 
 public class Grade {
-    int id;
-    float value;
-    Date date;
-    Course course;
+    private long id;
+    private float value;
+    private Date date;
+    private Course course;
 
     public Grade() {
     }
 
-    public Grade(int id, float value, Date date, Course course) {
+    public Grade(long id, float value, Date date, Course course) {
         this.id = id;
         this.value = value;
         this.date = date;
         this.course = course;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
