@@ -1,16 +1,19 @@
 package com.resource.proto;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-/* Root resource (exposed at "myresource" path) */
+@XmlRootElement
 public class Student {
-    long index;
-    String firstName;
-    String lastName;
-    Date birthDate;
-    List<Grade> grades;
+    private long index;
+    private String firstName;
+    private String lastName;
+    private Date birthDate;
+    private Map<Long, Grade> grades = new HashMap<>();
 
     public Student() {}
 
@@ -21,7 +24,7 @@ public class Student {
         this.birthDate = birthDate;
     }
 
-    public Student(long index, String firstName, String lastName, Date birthDate, List<Grade> grades) {
+    public Student(long index, String firstName, String lastName, Date birthDate, Map<Long, Grade> grades) {
         this.index = index;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -61,11 +64,12 @@ public class Student {
         this.birthDate = birthDate;
     }
 
-    public List<Grade> getGrades() {
+//    @XmlTransient
+    public Map<Long, Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(List<Grade> grades) {
+    public void setGrades(Map<Long, Grade> grades) {
         this.grades = grades;
     }
 }

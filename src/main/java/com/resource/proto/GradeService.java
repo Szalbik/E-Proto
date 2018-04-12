@@ -1,27 +1,32 @@
 package com.resource.proto;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 public class GradeService {
-    private Map<Long, Grade> grades = DatabaseClass.getGrades();
+    private Map<Long, Student> students = DatabaseClass.getStudents();
 
-    public List<Grade> getGrades() {
+    public List<Grade> getGrades(long studentIndex) {
+        Map<Long, Grade> grades = students.get(studentIndex).getGrades();
         return new ArrayList<Grade>(grades.values());
     }
 
-    public Grade getGrade(long id) {
-        return grades.get(id);
+    public Grade getGrade(long studentIndex, long gradeId) {
+        Map<Long, Grade> grades = students.get(studentIndex).getGrades();
+        return grades.get(gradeId);
     }
 
-    public Grade addGrade(Grade grade) {
+    public Grade addGrade(long studentIndex, Grade grade) {
+        Map<Long, Grade> grades = students.get(studentIndex).getGrades();
         grade.setId(grades.size() + 1);
         grades.put(grade.getId(), grade);
         return grade;
     }
 
-    public Grade updateGrade(Grade grade) {
+    public Grade updateGrade(long studentIndex, Grade grade) {
+        Map<Long, Grade> grades = students.get(studentIndex).getGrades();
         if (grade.getId() <= 0) {
             return null;
         }
@@ -29,7 +34,8 @@ public class GradeService {
         return grade;
     }
 
-    public Grade removeGrade(long id) {
-        return grades.remove(id);
+    public Grade removeGrade(long studentIndex, long gradeId) {
+        Map<Long, Grade> grades = students.get(studentIndex).getGrades();
+        return grades.remove(gradeId);
     }
 }

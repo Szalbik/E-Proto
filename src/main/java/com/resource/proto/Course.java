@@ -1,9 +1,14 @@
 package com.resource.proto;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Course {
     private long id;
     private String name;
     private String lecturer;
+
+
 
     public Course() {}
 

@@ -1,14 +1,22 @@
 package com.resource.proto;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
+import java.util.Map;
 
+@XmlRootElement
 public class Grade {
     private long id;
     private float value;
     private Date date;
     private Course course;
 
-    public Grade() {
+    public Grade() {}
+
+    public Grade(long id, float value, Date date) {
+        this.id = id;
+        this.value = value;
+        this.date = date;
     }
 
     public Grade(long id, float value, Date date, Course course) {
