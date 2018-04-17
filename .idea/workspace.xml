@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd474878-e9df-4b59-aa28-c507de69abc9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/Course.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/Course.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/CourseService.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/CourseService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/Grade.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/Grade.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/JSONResources.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/JSONResources.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/StudentService.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/StudentService.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,11 +44,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Grade.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Grade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="245">
+              <caret line="27" column="29" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="27" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,12 +153,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/mockModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/JSONResources.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/CourseService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/DatabaseClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" />
       </list>
     </option>
   </component>
@@ -412,7 +417,7 @@
       <workItem from="1523538861176" duration="525000" />
       <workItem from="1523540408335" duration="320000" />
       <workItem from="1523542193240" duration="3573000" />
-      <workItem from="1523951683567" duration="3446000" />
+      <workItem from="1523951683567" duration="3861000" />
     </task>
     <task id="LOCAL-00001" summary="return index and show">
       <created>1523484400174</created>
@@ -435,11 +440,25 @@
       <option name="project" value="LOCAL" />
       <updated>1523952927793</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add inject links to students">
+      <created>1523965292634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523965292634</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add inject links to students">
+      <created>1523965330489</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1523965330489</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37829000" />
+    <option name="totallyTimeSpent" value="38244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -486,7 +505,8 @@
     <MESSAGE value="return index and show" />
     <MESSAGE value="Finish first task of the project" />
     <MESSAGE value="Return data as xml or json. And refactor code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Return data as xml or json. And refactor code." />
+    <MESSAGE value="Add inject links to students" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add inject links to students" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -750,14 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/CourseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -845,8 +857,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="245">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
