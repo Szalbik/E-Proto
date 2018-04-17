@@ -7,10 +7,7 @@ import java.util.Map;
 public class CourseService {
     private Map<Long, Course> courses = DatabaseClass.getCourses();
 
-    public CourseService() {
-        courses.put(1l, new Course(1, "Learn Rest Api", "Janosik"));
-        courses.put(2l, new Course(2, "Learn WSDL ", "Marciniak"));
-    }
+    public CourseService() {}
 
     public List<Course> getCourses() {
         return new ArrayList<Course>(courses.values());

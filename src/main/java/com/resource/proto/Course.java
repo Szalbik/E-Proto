@@ -8,8 +8,6 @@ public class Course {
     private String name;
     private String lecturer;
 
-
-
     public Course() {}
 
     public Course(long id, String name, String lecturer) {

@@ -65,6 +65,9 @@ public class DatabaseClass {
         Student student2 = new Student(2, "Kuba", "Szalbierz", new Date("1995/2/15"), grades);
         students.put(2l, student2);
         grades = new HashMap<Long, Grade>();
+
+        courses.put(1l, new Course(1, "Learn Rest Api", "Janosik"));
+        courses.put(2l, new Course(2, "Learn WSDL ", "Marciniak"));
     }
 
 

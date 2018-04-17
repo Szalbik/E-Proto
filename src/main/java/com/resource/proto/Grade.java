@@ -46,17 +46,6 @@ public class Grade {
         } else {
             this.value = 2f;
         }
-//        if (value < 2f) {
-//            this.value = 2f;
-//        } else if (value > 5) {
-//            this.value = 5f;
-//        } else {
-//            if (value == Math.round(value)) {
-//                this.value = value;
-//            } else {
-//                this.value = Math.round(value) - 0.5f;
-//            }
-//        }
     }
 
     public Date getDate() {
