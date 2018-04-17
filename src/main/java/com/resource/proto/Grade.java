@@ -1,10 +1,15 @@
 package com.resource.proto;
 
-import org.w3c.dom.ranges.Range;
+import org.glassfish.jersey.linking.InjectLink;
+import org.glassfish.jersey.linking.InjectLinks;
 
+import javax.ws.rs.core.Link;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Date;
-import java.util.Map;
+import java.util.List;
 
 @XmlRootElement
 public class Grade {
@@ -12,6 +17,15 @@ public class Grade {
     private float value;
     private Date date;
     private Course course;
+    @InjectLinks({
+            @InjectLink(value = "/students/{index}/grades/{id}", rel = "self"),
+            @InjectLink(value = "/students/{index}/grades", rel = "parent"),
+//            @InjectLink(value = "/students/{index}", rel = "student")
+    })
+    @XmlElement(name = "link")
+    @XmlElementWrapper(name = "links")
+    @XmlJavaTypeAdapter(Link.JaxbAdapter.class)
+    private List<Link> links;
 
     public Grade() {}
 

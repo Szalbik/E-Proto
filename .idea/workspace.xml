@@ -3,12 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bd474878-e9df-4b59-aa28-c507de69abc9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/CourseService.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/CourseService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/DatabaseClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/DatabaseClass.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/JSONResources.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/JSONResources.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/DatabaseClass.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/DatabaseClass.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" afterPath="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/Course.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/Course.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/CourseService.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/CourseService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/Grade.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/Grade.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/JSONResources.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/JSONResources.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/proto/StudentService.class" afterPath="$PROJECT_DIR$/target/classes/com/resource/proto/StudentService.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,7 +36,60 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1604#1605#0" expanded="true" />
+                <element signature="e#1632#1633#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Grade.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSONResources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/JSONResources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#644#645#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1264#1265#0" expanded="true" />
+                <element signature="e#1374#1375#0" expanded="true" />
+                <element signature="e#1426#1427#0" expanded="true" />
+                <element signature="e#1697#1698#0" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="e#2290#2291#0" expanded="true" />
+                <element signature="e#2336#2337#0" expanded="true" />
+                <element signature="e#2441#2442#0" expanded="true" />
+                <element signature="e#2491#2492#0" expanded="true" />
+                <element signature="e#2813#2814#0" expanded="true" />
+                <element signature="e#2869#2870#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -89,15 +144,15 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/JSONService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/XmlRootElemet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/GradeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/mockModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/JSONResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Course.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/CourseService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/DatabaseClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java" />
       </list>
     </option>
@@ -357,7 +412,7 @@
       <workItem from="1523538861176" duration="525000" />
       <workItem from="1523540408335" duration="320000" />
       <workItem from="1523542193240" duration="3573000" />
-      <workItem from="1523951683567" duration="867000" />
+      <workItem from="1523951683567" duration="3446000" />
     </task>
     <task id="LOCAL-00001" summary="return index and show">
       <created>1523484400174</created>
@@ -373,14 +428,22 @@
       <option name="project" value="LOCAL" />
       <updated>1523952569790</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Return data as xml or json. And refactor code.">
+      <created>1523952927793</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523952927793</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35250000" />
+    <option name="totallyTimeSpent" value="37829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -392,7 +455,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -422,7 +485,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="return index and show" />
     <MESSAGE value="Finish first task of the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish first task of the project" />
+    <MESSAGE value="Return data as xml or json. And refactor code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Return data as xml or json. And refactor code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -480,7 +544,7 @@
         <state relative-caret-position="150">
           <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -530,8 +594,9 @@
         <state relative-caret-position="139">
           <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
           <folding>
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -541,10 +606,10 @@
         <state relative-caret-position="154">
           <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#285#286#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="false" />
+            <element signature="e#366#367#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -711,14 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/GradeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -727,10 +784,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#285#286#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="false" />
+            <element signature="e#366#367#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/JSONResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#593#594#0" expanded="true" />
@@ -751,36 +843,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Grade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="317">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/resource/proto/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
           </folding>
         </state>
       </provider>
