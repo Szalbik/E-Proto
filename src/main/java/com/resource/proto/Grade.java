@@ -1,5 +1,7 @@
 package com.resource.proto;
 
+import org.w3c.dom.ranges.Range;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 import java.util.Map;
@@ -39,7 +41,22 @@ public class Grade {
     }
 
     public void setValue(float value) {
-        this.value = value;
+        if (value%0.5f == 0 && (value >= 3f && value <= 5f) || value == 2f) {
+            this.value = value;
+        } else {
+            this.value = 2f;
+        }
+//        if (value < 2f) {
+//            this.value = 2f;
+//        } else if (value > 5) {
+//            this.value = 5f;
+//        } else {
+//            if (value == Math.round(value)) {
+//                this.value = value;
+//            } else {
+//                this.value = Math.round(value) - 0.5f;
+//            }
+//        }
     }
 
     public Date getDate() {

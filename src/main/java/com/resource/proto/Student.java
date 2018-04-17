@@ -2,6 +2,8 @@ package com.resource.proto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -57,11 +59,12 @@ public class Student {
     }
 
     public Date getBirthDate() {
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDate(long birthDate) {
+        this.birthDate = new Date(birthDate);
     }
 
 //    @XmlTransient
