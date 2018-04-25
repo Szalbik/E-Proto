@@ -44,8 +44,14 @@ public class JSONResources {
 
     @GET
     @Path("/students/{studentId}")
-    public Student getStudent(@PathParam("studentId") long id) {
-        return studentService.getStudent(id);
+    public Response getStudent(@PathParam("studentId") long id) {
+
+        if (studentService.getStudent(id) == null) {
+            return Response.status(404).build();
+        }
+
+        Student student = studentService.getStudent(id);
+        return Response.status(200).entity(student).build();
     }
 
 //  ==================================================
@@ -58,7 +64,8 @@ public class JSONResources {
     @GET
     @Path("/courses")
     public List<Course> getCourses() {
-        return courseService.getCourses();
+        List<Course> courses = courseService.getCourses();
+        return courses;
     }
 
     @POST

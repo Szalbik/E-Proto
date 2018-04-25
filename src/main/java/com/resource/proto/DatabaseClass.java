@@ -1,9 +1,8 @@
 package com.resource.proto;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import org.mongodb.morphia.Datastore;
+
+import java.util.*;
 
 public class DatabaseClass {
     private static Map<Long, Student> students = new HashMap<>();
@@ -11,6 +10,8 @@ public class DatabaseClass {
     private static Map<Long, Grade> grades = new HashMap<>();
 
     static {
+        Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
+
         Grade tempGrade1 = new Grade();
         /////////// student 1
         tempGrade1.setId(1);
@@ -35,7 +36,7 @@ public class DatabaseClass {
         grades.put(3l, tempGrade3);
         tempGrade3 = new Grade();
         //
-        Student student = new Student(1, "Damian" + new Random().nextInt(), "Szalbierz", new Date("1995/2/15"), grades);
+        Student student = new Student(1, "Damian" + new Random().nextInt(), "Szalbierz", new Date("1995/2/15"));
         students.put(1l, student);
         grades = new HashMap<Long, Grade>();
         /////////// student 2
@@ -62,12 +63,17 @@ public class DatabaseClass {
         grades.put(6l, tempGrade6);
         tempGrade6 = new Grade();
         //
-        Student student2 = new Student(2, "Kuba", "Szalbierz", new Date("1995/2/15"), grades);
+        Student student2 = new Student(2, "Kuba", "Szalbierz", new Date("1995/2/15"));
         students.put(2l, student2);
         grades = new HashMap<Long, Grade>();
 
         courses.put(1l, new Course(1, "Learn Rest Api", "Janosik"));
         courses.put(2l, new Course(2, "Learn WSDL ", "Marciniak"));
+
+        List<Student> studentsList = new ArrayList<Student>(students.values());
+        List<Course> coursrsList = new ArrayList<Course>(courses.values());
+
+//        datastore.save(coursrsList);
     }
 
 

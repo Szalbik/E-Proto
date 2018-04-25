@@ -15,7 +15,9 @@ public class Main {
         ResourceConfig config = new ResourceConfig()
                 .packages("com.resource.proto")
                 .packages("org.glassfish.jersey.examples.linking")
-                .register(DeclarativeLinkingFeature.class);
+                .register(DeclarativeLinkingFeature.class)
+                .register(RestError.class);
+
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config);
 
         try {
