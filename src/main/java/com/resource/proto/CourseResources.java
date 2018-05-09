@@ -12,14 +12,12 @@ public class CourseResources {
     CourseService courseService = new CourseService();
 
     @GET
-    @Path("/")
     public List<Course> getCourses() {
         List<Course> courses = courseService.getCourses();
         return courses;
     }
 
     @POST
-    @Path("/")
     public Response addCourse(Course course) {
         Course newCourse = courseService.addCourse(course);
         return Response.status(Response.Status.CREATED).entity(newCourse).build();
@@ -28,8 +26,8 @@ public class CourseResources {
     @PUT
     @Path("/{id}")
     public Course updateCourse(@PathParam("id") long id, Course course) {
-        course.setId(id);
-        return courseService.updateCourse(course);
+//        course.setId(id);
+        return courseService.updateCourse(id, course);
     }
 
     @DELETE

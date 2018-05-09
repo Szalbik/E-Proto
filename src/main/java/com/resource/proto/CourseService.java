@@ -9,16 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 public class CourseService {
-    private Map<Long, Course> courses = DatabaseClass.getCourses();
+//    private Map<Long, Course> courses = DatabaseClass.getCourses();
 
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
     final Query<Course> query = datastore.createQuery(Course.class);
 
-    public CourseService() {}
-
     public List<Course> getCourses() {
-        List<Course> courseList = query.asList();
-        return courseList;
+        return query.asList();
     }
 
     public Course getCourse(long id) {
@@ -27,18 +24,18 @@ public class CourseService {
     }
 
     public Course addCourse(Course course) {
-        course.setId(courses.size() + 1);
-        courses.put(course.getId(), course);
+        course.setId(query.asList().size() + 1);
+//        courses.put(course.getId(), course);
         datastore.save(course);
         return course;
     }
 
-    public Course updateCourse(Course course) {
+    public Course updateCourse(long id, Course course) {
         if (course.getId() <= 0) {
             return null;
         }
 
-        Course foundCourse = query.field("id").equal(course.getId()).get();
+        Course foundCourse = query.field("id").equal(id).get();
         UpdateOperations ops = datastore
                 .createUpdateOperations(Course.class)
                 .set("name", course.getName())

@@ -10,7 +10,7 @@ public class DatabaseClass {
     private static Map<Long, Grade> grades = new HashMap<>();
 
     static {
-        Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
+//        Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
 
         Grade tempGrade1 = new Grade();
         /////////// student 1
@@ -75,7 +75,6 @@ public class DatabaseClass {
 
 //        List<Course> dsadasdasd = datastore.createQuery(Course.class).asList();
 //        System.out.println(dsadasdasd);
-//        datastore.save(coursrsList);
     }
 
 

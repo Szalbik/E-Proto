@@ -14,11 +14,11 @@ import java.util.List;
 @Entity("courses")
 @XmlRootElement
 public class Course {
-    private long id;
     @XmlTransient
     @Id
     @XmlJavaTypeAdapter(ObjectIdJaxbAdapter.class)
     private ObjectId mongoId;
+    private long id;
     private String name;
     private String lecturer;
     @InjectLinks({

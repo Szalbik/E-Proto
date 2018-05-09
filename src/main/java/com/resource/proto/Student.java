@@ -14,23 +14,21 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Entity("students")
 @XmlRootElement
 public class Student {
-    @Id
     @XmlTransient
-    private ObjectId ID;
+    @Id
+    @XmlJavaTypeAdapter(ObjectIdJaxbAdapter.class)
+    private ObjectId id;
     private long index;
     private String firstName;
     private String lastName;
     private Date birthDate;
     @Embedded
-    private Map<Long, Grade> grades = new HashMap<>();
+    private List<Grade> grades;
     @InjectLinks({
             @InjectLink(value = "/students/{index}", rel = "self"),
             @InjectLink(value = "/students", rel = "parent"),
@@ -55,7 +53,17 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
-        this.grades = grades;
+//        this.grades = grades;
+    }
+
+    @XmlTransient
+    @XmlElement
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     @XmlElement
@@ -87,7 +95,6 @@ public class Student {
 
     @XmlElement
     public Date getBirthDate() {
-//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return birthDate;
     }
 
@@ -95,21 +102,12 @@ public class Student {
         this.birthDate = new Date(birthDate);
     }
 
-//    @XmlTransient
     @XmlElement
-    public Map<Long, Grade> getGrades() {
+    public List<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(Map<Long, Grade> grades) {
+    public void setGrades(List<Grade> grades) {
         this.grades = grades;
-    }
-
-    public ObjectId getID() {
-        return ID;
-    }
-
-    public void setID(ObjectId ID) {
-        this.ID = ID;
     }
 }
