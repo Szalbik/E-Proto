@@ -73,6 +73,8 @@ public class DatabaseClass {
         List<Student> studentsList = new ArrayList<Student>(students.values());
         List<Course> coursrsList = new ArrayList<Course>(courses.values());
 
+//        List<Course> dsadasdasd = datastore.createQuery(Course.class).asList();
+//        System.out.println(dsadasdasd);
 //        datastore.save(coursrsList);
     }
 

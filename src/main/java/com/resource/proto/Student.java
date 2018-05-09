@@ -1,5 +1,6 @@
 package com.resource.proto;
 
+import com.resource.proto.Grade;
 import org.bson.types.ObjectId;
 import org.glassfish.jersey.linking.InjectLink;
 import org.glassfish.jersey.linking.InjectLinks;
@@ -39,7 +40,6 @@ public class Student {
     @XmlElementWrapper(name = "links")
     @XmlJavaTypeAdapter(Link.JaxbAdapter.class)
     private List<Link> links;
-
 
     public Student() {}
 

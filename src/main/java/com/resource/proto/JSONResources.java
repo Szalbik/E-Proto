@@ -58,41 +58,7 @@ public class JSONResources {
 //                      COURSES
 //  ==================================================
 
-
     CourseService courseService = new CourseService();
-
-    @GET
-    @Path("/courses")
-    public List<Course> getCourses() {
-        List<Course> courses = courseService.getCourses();
-        return courses;
-    }
-
-    @POST
-    @Path("/courses")
-    public Response addCourse(Course course) {
-        Course newCourse = courseService.addCourse(course);
-        return Response.status(Response.Status.CREATED).entity(newCourse).build();
-    }
-
-    @PUT
-    @Path("/courses/{courseId}")
-    public Course updateCourse(@PathParam("courseId") long id, Course course) {
-        course.setId(id);
-        return courseService.updateCourse(course);
-    }
-
-    @DELETE
-    @Path("/courses/{courseId}")
-    public void deleteCourse(@PathParam("courseId") long id) {
-        courseService.removeCourse(id);
-    }
-
-    @GET
-    @Path("/courses/{courseId}")
-    public Course getCourse(@PathParam("courseId") long id) {
-        return courseService.getCourse(id);
-    }
 
 //  ==================================================
 //                      GRADES
@@ -110,7 +76,7 @@ public class JSONResources {
     @Path("/students/{studentId}/grades")
     public Response addGrade(@PathParam("studentId") long studentId, Grade grade) {
         Grade newGrade =  gradeService.addGrade(studentId, grade);
-        courseService.addCourse(grade.getCourse());
+//        courseService.addCourse(grade.getCourse());
         return Response.status(Response.Status.CREATED).entity(newGrade).build();
     }
 

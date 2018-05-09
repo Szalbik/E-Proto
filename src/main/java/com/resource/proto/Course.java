@@ -11,18 +11,19 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.List;
 
-@Entity
+@Entity("courses")
 @XmlRootElement
 public class Course {
     private long id;
+    @XmlTransient
     @Id
+    @XmlJavaTypeAdapter(ObjectIdJaxbAdapter.class)
     private ObjectId mongoId;
     private String name;
     private String lecturer;
     @InjectLinks({
             @InjectLink(value = "/courses/{id}", rel = "self"),
-            @InjectLink(value = "/courses", rel = "parent"),
-//            @InjectLink(value = "/students/{index}", rel = "student")
+            @InjectLink(value = "/courses", rel = "parent")
     })
     @XmlElement(name = "link")
     @XmlElementWrapper(name = "links")
@@ -33,6 +34,7 @@ public class Course {
 
     public Course(long id, String name, String lecturer) {
         super();
+
         this.id = id;
         this.name = name;
         this.lecturer = lecturer;
@@ -65,16 +67,7 @@ public class Course {
         this.lecturer = lecturer;
     }
 
-    @XmlElement
-    public List<Link> getLinks() {
-        return links;
-    }
-
-    public void setLinks(List<Link> links) {
-        this.links = links;
-    }
-
-//    @XmlTransient
+    @XmlTransient
     @XmlElement
     public ObjectId getMongoId() {
         return mongoId;

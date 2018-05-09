@@ -1,9 +1,10 @@
 package com.resource.proto;
 
+import com.mongodb.WriteResult;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
+import org.mongodb.morphia.query.UpdateOperations;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,20 +12,18 @@ public class CourseService {
     private Map<Long, Course> courses = DatabaseClass.getCourses();
 
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
+    final Query<Course> query = datastore.createQuery(Course.class);
 
     public CourseService() {}
 
     public List<Course> getCourses() {
-//        return new ArrayList<Course>(courses.values());
-        final Query<Course> query = datastore.createQuery(Course.class);
         List<Course> courseList = query.asList();
-
         return courseList;
     }
 
     public Course getCourse(long id) {
-//        return datastore.get(Course.class, id);
-        return courses.get(id);
+        Course course = query.field("id").equal(id).get();
+        return course;
     }
 
     public Course addCourse(Course course) {
@@ -38,11 +37,20 @@ public class CourseService {
         if (course.getId() <= 0) {
             return null;
         }
-        courses.put(course.getId(), course);
+
+        Course foundCourse = query.field("id").equal(course.getId()).get();
+        UpdateOperations ops = datastore
+                .createUpdateOperations(Course.class)
+                .set("name", course.getName())
+                .set("lecturer", course.getLecturer());
+
+        datastore.update(foundCourse, ops);
+
         return course;
     }
 
-    public Course removeCourse(long id) {
-        return courses.remove(id);
+    public WriteResult removeCourse(long id) {
+        Course foundCourse = (Course) query.field("id").equal(id).get();
+        return datastore.delete(foundCourse);
     }
 }

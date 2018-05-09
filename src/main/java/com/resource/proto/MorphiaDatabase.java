@@ -11,7 +11,7 @@ public class MorphiaDatabase {
     private MorphiaDatabase() {
         final Morphia morphia = new Morphia();
         morphia.mapPackage("com.resource.proto");
-        datastore = morphia.createDatastore(new MongoClient(), "proto_morphia");
+        datastore = morphia.createDatastore(new MongoClient("localhost", 8004), "proto_morphia");
         datastore.ensureIndexes();
     }
 
