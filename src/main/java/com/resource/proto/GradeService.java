@@ -15,6 +15,7 @@ public class GradeService {
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
     final Query<Grade> queryGrade = datastore.createQuery(Grade.class);
     final Query<Student> queryStudent = datastore.createQuery(Student.class);
+    final Query<Course> queryCourse = datastore.createQuery(Course.class);
 
 
     public List<Grade> getGrades(long index) {
@@ -45,6 +46,10 @@ public class GradeService {
         } else {
             grade.setId(1);
         }
+
+        long courseId = grade.getCourse().getId();
+        Course course = queryCourse.field("id").equal(courseId).get();
+        grade.setCourse(course);
 
         List<Grade> foundStudentGrades = foundStudent.getGrades();
 

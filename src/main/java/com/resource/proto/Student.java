@@ -1,5 +1,6 @@
 package com.resource.proto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.resource.proto.Grade;
 import org.bson.types.ObjectId;
 import org.glassfish.jersey.linking.InjectLink;
@@ -26,6 +27,7 @@ public class Student {
     private long index;
     private String firstName;
     private String lastName;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
     private Date birthDate;
     @Embedded
     private List<Grade> grades;

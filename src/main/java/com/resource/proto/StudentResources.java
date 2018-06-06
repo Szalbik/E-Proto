@@ -3,6 +3,7 @@ package com.resource.proto;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Date;
 import java.util.List;
 
 @Path("/students")
@@ -12,14 +13,19 @@ public class StudentResources {
     StudentService studentService = new StudentService();
 
     @GET
-    public List<Student> getStudents() {
-        return studentService.getStudents();
+
+    public Response getStudents(@QueryParam("firstName") String firstName,
+                                @QueryParam("lastName") String lastName,
+                                @QueryParam("birthDate") Date birthDate,
+                                @QueryParam("dateRelation") Integer dateRelation) {
+        List<Student> studentList = studentService.getStudents(firstName, lastName, birthDate, dateRelation);
+        return Response.status(Response.Status.OK).entity(studentList).build();
     }
 
     @POST
     public Response addStudent(Student student) {
         Student newStudent = studentService.addStudent(student);
-        return Response.status(Response.Status.CREATED).entity(newStudent).build();
+        return Response.status(Response.Status.CREATED).header("Location", "/students/" + student.getId()).entity(newStudent).build();
     }
 
     @PUT

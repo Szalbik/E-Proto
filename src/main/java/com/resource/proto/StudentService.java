@@ -13,7 +13,32 @@ public class StudentService {
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
     final Query<Student> query = datastore.createQuery(Student.class);
 
-    public List<Student> getStudents() {
+    public List<Student> getStudents(String firstName, String lastName, Date birthDate, Integer dateRelation) {
+        if (firstName != null) {
+            query.field("firstName").containsIgnoreCase(firstName);
+        }
+
+        if (lastName != null) {
+            query.field("lastName").containsIgnoreCase(lastName);
+        }
+
+        if (birthDate != null && dateRelation.equals(null) ) {
+            query.field("birthDate").equals(birthDate);
+        }
+
+        if (birthDate != null && dateRelation != null) {
+           switch (dateRelation) {
+               case 0:
+                   query.field("birthDate").equals(birthDate);
+               case 1:
+                   query.field("birthDate").greaterThan(birthDate);
+                   break;
+               case -1:
+                   query.field("birthDate").lessThan(birthDate);
+                   break;
+           }
+        }
+
         return query.asList();
     }
 
@@ -24,7 +49,6 @@ public class StudentService {
 
     public Student addStudent(Student student) {
         student.setIndex(query.asList().size() + 1);
-//        students.put(student.getIndex(), student);
         datastore.save(student);
         return student;
     }
@@ -40,8 +64,8 @@ public class StudentService {
                 .createUpdateOperations(Student.class)
                 .set("firstName", student.getFirstName())
                 .set("lastName", student.getLastName())
-                .set("birthDate", student.getBirthDate());
-//                .set("grades", student.getGrades());
+                .set("birthDate", student.getBirthDate())
+                .set("grades", student.getGrades());
 
         datastore.update(foundStudent, ops);
 

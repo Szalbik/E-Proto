@@ -1,5 +1,7 @@
 package com.resource.proto;
 
+import com.mongodb.WriteResult;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,7 +22,7 @@ public class CourseResources {
     @POST
     public Response addCourse(Course course) {
         Course newCourse = courseService.addCourse(course);
-        return Response.status(Response.Status.CREATED).entity(newCourse).build();
+        return Response.status(Response.Status.CREATED).header("Location", "/courses/" + course.getId()).entity(newCourse).build();
     }
 
     @PUT
@@ -32,8 +34,15 @@ public class CourseResources {
 
     @DELETE
     @Path("/{id}")
-    public void deleteCourse(@PathParam("id") long id) {
-        courseService.removeCourse(id);
+    public Response deleteCourse(@PathParam("id") long id) {
+        Course course = courseService.removeCourse(id);
+
+        if (course != null) {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
     }
 
     @GET

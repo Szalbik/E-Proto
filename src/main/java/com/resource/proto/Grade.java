@@ -1,5 +1,6 @@
 package com.resource.proto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.resource.proto.Course;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
@@ -12,6 +13,7 @@ import java.util.Date;
 public class Grade {
     private long id;
     private float value;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
     private Date date;
     @Reference
     private Course course;

@@ -16,7 +16,8 @@ public class Main {
                 .packages("com.resource.proto")
                 .packages("org.glassfish.jersey.examples.linking")
                 .register(DeclarativeLinkingFeature.class)
-                .register(RestError.class);
+                .register(RestError.class)
+                .register(new DateParamConverterProvider("yyyy-MM-dd"));
 
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config);
 

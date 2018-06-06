@@ -46,8 +46,13 @@ public class CourseService {
         return course;
     }
 
-    public WriteResult removeCourse(long id) {
+    public Course removeCourse(long id) {
         Course foundCourse = (Course) query.field("id").equal(id).get();
-        return datastore.delete(foundCourse);
+        if (foundCourse != null) {
+            datastore.delete(foundCourse);
+            return foundCourse;
+        } else {
+            return null;
+        }
     }
 }
