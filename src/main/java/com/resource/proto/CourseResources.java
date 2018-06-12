@@ -14,9 +14,10 @@ public class CourseResources {
     CourseService courseService = new CourseService();
 
     @GET
-    public List<Course> getCourses() {
-        List<Course> courses = courseService.getCourses();
-        return courses;
+    public Response getCourses(@QueryParam("name") String name,
+                               @QueryParam("lecturer") String lecturer) {
+        List<Course> courses = courseService.getCourses(name, lecturer);
+        return Response.status(Response.Status.OK).entity(courses).build();
     }
 
     @POST

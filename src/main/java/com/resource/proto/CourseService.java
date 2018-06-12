@@ -14,7 +14,15 @@ public class CourseService {
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
     final Query<Course> query = datastore.createQuery(Course.class);
 
-    public List<Course> getCourses() {
+    public List<Course> getCourses(String name, String lecturer) {
+        if (name != null) {
+            query.field("name").containsIgnoreCase(name);
+        }
+
+        if (lecturer != null) {
+            query.field("lecturer").containsIgnoreCase(lecturer);
+        }
+
         return query.asList();
     }
 
@@ -25,7 +33,6 @@ public class CourseService {
 
     public Course addCourse(Course course) {
         course.setId(query.asList().size() + 1);
-//        courses.put(course.getId(), course);
         datastore.save(course);
         return course;
     }
