@@ -17,9 +17,14 @@ public class GradeResource {
 
     @GET
     public Response getGrades(@PathParam("index") long studentId,
-                              @QueryParam("value") Float value,
-                              @QueryParam("date") Date date) {
-        List<Grade> gradeList = gradeService.getGrades(studentId, value, date);
+                              @QueryParam("value") float value,
+                              @QueryParam("valueRelation") String valueRelation,
+                              @QueryParam("date") Date date,
+                              @QueryParam("dateRelation") String dateRelation,
+                              @QueryParam("courseName") String courseName) {
+        List<Grade> gradeList = gradeService.getGrades(studentId, value, valueRelation, date, dateRelation, courseName);
+        if (gradeList == null || gradeList.isEmpty())
+            return Response.status(Response.Status.NOT_FOUND).entity("Student's grades not found").build();
         return Response.status(Response.Status.OK).entity(gradeList).build();
     }
 

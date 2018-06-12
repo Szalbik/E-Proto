@@ -23,7 +23,7 @@ public class StudentService {
         }
 
         if (birthDate != null && dateRelation != null) {
-           switch (dateRelation) {
+           switch (dateRelation.toLowerCase()) {
                case "equal":
                     query.field("birthDate").equal(birthDate);
 //                    return query.asList();

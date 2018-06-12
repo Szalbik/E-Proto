@@ -8,28 +8,62 @@ import org.mongodb.morphia.query.UpdateOperations;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.Response;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class GradeService {
     private Map<Long, Student> students = DatabaseClass.getStudents();
 
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
-    final Query<Grade> queryGrade = datastore.createQuery(Grade.class);
     final Query<Student> queryStudent = datastore.createQuery(Student.class);
     final Query<Course> queryCourse = datastore.createQuery(Course.class);
 
 
-    public List<Grade> getGrades(long index, float value, Date date) {
+    public List<Grade> getGrades(long index, float value, String valueRelation, Date date, String dateRelation, String courseName) {
         Student foundStudent = queryStudent.field("index").equal(index).get();
         List<Grade> grades = foundStudent.getGrades();
+
+        if (grades == null || grades.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        if (courseName != null) {
+            grades = grades.stream().filter(gr -> gr.getCourse().getName().equals(courseName)).collect(Collectors.toList());
+        }
+
+        if (value != 0.0f && valueRelation != null) {
+            switch (valueRelation.toLowerCase()) {
+                case "greater":
+                    grades = grades.stream().filter(gr -> gr.getValue() > Float.valueOf(value).floatValue()).collect(Collectors.toList());
+                    break;
+                case "equal":
+                    grades = grades.stream().filter(gr -> gr.getValue() == Float.valueOf(value).floatValue()).collect(Collectors.toList());
+                    break;
+                case "lower":
+                    grades = grades.stream().filter(gr -> gr.getValue() < Float.valueOf(value).floatValue()).collect(Collectors.toList());
+                    break;
+            }
+        }
+
+        if (date != null && dateRelation != null) {
+            switch (dateRelation.toLowerCase()) {
+                case "greater":
+                    grades = grades.stream().filter(gr -> gr.getDate().after(date)).collect(Collectors.toList());
+                    break;
+                case "equal":
+                    grades = grades.stream().filter(gr -> gr.getDate().equals(date)).collect(Collectors.toList());
+                    break;
+                case "lower":
+                    grades = grades.stream().filter(gr -> gr.getDate().before(date)).collect(Collectors.toList());
+                    break;
+            }
+        }
+
         return grades;
     }
 
     public Grade getGrade(long index, long gradeId) {
         Student foundStudent = queryStudent.field("index").equal(index).get();
         List<Grade> grades = foundStudent.getGrades();
-//        Optional<Grade> gradeMatch = grades.stream()
-//                .filter(g -> g.getId() == gradeId).findFirst();
-//        return gradeMatch.get();
         for (Grade grade:grades) {
             if(gradeId == grade.getId()) {
                 return grade;
