@@ -13,7 +13,7 @@ import java.util.Date;
 public class Grade {
     private long id;
     private float value;
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date date;
     @Reference
     private Course course;

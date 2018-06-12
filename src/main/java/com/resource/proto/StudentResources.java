@@ -13,11 +13,10 @@ public class StudentResources {
     StudentService studentService = new StudentService();
 
     @GET
-
     public Response getStudents(@QueryParam("firstName") String firstName,
                                 @QueryParam("lastName") String lastName,
                                 @QueryParam("birthDate") Date birthDate,
-                                @QueryParam("dateRelation") Integer dateRelation) {
+                                @QueryParam("dateRelation") String dateRelation) {
         List<Student> studentList = studentService.getStudents(firstName, lastName, birthDate, dateRelation);
         return Response.status(Response.Status.OK).entity(studentList).build();
     }

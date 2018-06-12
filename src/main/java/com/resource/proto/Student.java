@@ -27,7 +27,7 @@ public class Student {
     private long index;
     private String firstName;
     private String lastName;
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date birthDate;
     @Embedded
     private List<Grade> grades;
@@ -50,12 +50,12 @@ public class Student {
         this.birthDate = birthDate;
     }
 
-    public Student(long index, String firstName, String lastName, Date birthDate, Map<Long, Grade> grades) {
+    public Student(long index, String firstName, String lastName, Date birthDate, List<Grade> grades) {
         this.index = index;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
-//        this.grades = grades;
+        this.grades = grades;
     }
 
     @XmlTransient
@@ -95,13 +95,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    @XmlElement
     public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(long birthDate) {
-        this.birthDate = new Date(birthDate);
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     @XmlElement

@@ -18,7 +18,7 @@ public class GradeService {
     final Query<Course> queryCourse = datastore.createQuery(Course.class);
 
 
-    public List<Grade> getGrades(long index) {
+    public List<Grade> getGrades(long index, float value, Date date) {
         Student foundStudent = queryStudent.field("index").equal(index).get();
         List<Grade> grades = foundStudent.getGrades();
         return grades;

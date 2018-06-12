@@ -13,7 +13,7 @@ public class StudentService {
     private Datastore datastore = MorphiaDatabase.getDatabase().getDatastore();
     final Query<Student> query = datastore.createQuery(Student.class);
 
-    public List<Student> getStudents(String firstName, String lastName, Date birthDate, Integer dateRelation) {
+    public List<Student> getStudents(String firstName, String lastName, Date birthDate, String dateRelation) {
         if (firstName != null) {
             query.field("firstName").containsIgnoreCase(firstName);
         }
@@ -22,19 +22,19 @@ public class StudentService {
             query.field("lastName").containsIgnoreCase(lastName);
         }
 
-        if (birthDate != null && dateRelation.equals(null) ) {
-            query.field("birthDate").equals(birthDate);
-        }
-
         if (birthDate != null && dateRelation != null) {
            switch (dateRelation) {
-               case 0:
-                   query.field("birthDate").equals(birthDate);
-               case 1:
+               case "equal":
+                    query.field("birthDate").equal(birthDate);
+//                    return query.asList();
+                    break;
+               case "greater":
                    query.field("birthDate").greaterThan(birthDate);
+//                   return query.asList();
                    break;
-               case -1:
+               case "less":
                    query.field("birthDate").lessThan(birthDate);
+//                   return query.asList();
                    break;
            }
         }

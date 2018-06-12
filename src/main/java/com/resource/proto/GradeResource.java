@@ -6,6 +6,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.xml.bind.annotation.XmlElement;
+import java.util.Date;
 import java.util.List;
 
 @Path("/")
@@ -15,8 +16,11 @@ public class GradeResource {
     GradeService gradeService = new GradeService();
 
     @GET
-    public List<Grade> getGrades(@PathParam("index") long studentId) {
-        return gradeService.getGrades(studentId);
+    public Response getGrades(@PathParam("index") long studentId,
+                              @QueryParam("value") Float value,
+                              @QueryParam("date") Date date) {
+        List<Grade> gradeList = gradeService.getGrades(studentId, value, date);
+        return Response.status(Response.Status.OK).entity(gradeList).build();
     }
 
     @POST

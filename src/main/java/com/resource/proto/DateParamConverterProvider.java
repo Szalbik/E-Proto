@@ -35,9 +35,9 @@ public class DateParamConverterProvider implements ParamConverterProvider {
                 if (value == null)
                     return null;
 
-                SimpleDateFormat formatter = new SimpleDateFormat(format);
+                SimpleDateFormat formatter = new SimpleDateFormat(format+"Z");
                 try {
-                    return formatter.parse(value);
+                    return formatter.parse(value+"+0000");
                 } catch (Exception ex) {
                     throw new WebApplicationException("Bad formatted date", 400);
                 }
